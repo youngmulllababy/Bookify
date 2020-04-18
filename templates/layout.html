@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Bookify</title>
+        
+
+        <div class="style-head">
+            {% block style %}
+            {% endblock %}
+        
+
+        </div>
+    
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Bookify</a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="{{url_for('home')}}">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('login')}}">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('register')}}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="{{ url_for('welcome')}}" >Search</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+              </li>
+              </ul>
+          </div>
+        </nav>
+
+      
+
+</head>
+    <body>
+      <div class="container" style="min-height:100% width:80%" id= "flashmsg">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for  message in messages %}
+            <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              {{message}}
+            </div>
+          {% endfor %}
+          
+        {% endif %}
+      {% endwith %}
+  </div>
+
+         
+        <div class="container">
+        {% block body %}
+        {% endblock %}
+      </div>
+      
+<!--<script>  window.setTimeout(function() { $("#flashmsg").fadeTo(500, 0).slideUp(500, function() { $(this).remove(); }); }, 5000);  </script>-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+    
+</html>

@@ -1,0 +1,180 @@
+{% extends "layout.html" %}
+<html>
+{% block style %}
+{{super()}}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<style>
+body {
+  background-image: url('/static/loginimage.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Numans', sans-serif;
+}
+
+  .form-control{
+		height: 40px;
+		box-shadow: none;
+		color: #969fa4;
+	}
+	.form-control:focus{
+		border-color: #5cb85c;
+	}
+    .form-control, .btn{        
+        border-radius: 3px;
+    }
+	.signup-form{
+		width: 400px;
+		margin: 0 auto;
+		padding: 30px 0;
+	}
+	.signup-form h2{
+		color: #636363;
+        margin: 0 0 15px;
+		position: relative;
+		text-align: center;
+    }
+	.signup-form h2:before, .signup-form h2:after{
+		content: "";
+		height: 2px;
+		width: 30%;
+		background: #d4d4d4;
+		position: absolute;
+		top: 50%;
+		z-index: 2;
+	}	
+	.signup-form h2:before{
+		left: 0;
+	}
+	.signup-form h2:after{
+		right: 0;
+	}
+    .signup-form .hint-text{
+		color: #999;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+    .signup-form form{
+		color: #999;
+		border-radius: 3px;
+    	margin-bottom: 15px;
+        background: #f2f3f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+	.signup-form .form-group{
+		margin-bottom: 20px;
+	}
+	.signup-form input[type="checkbox"]{
+		margin-top: 3px;
+	}
+	.signup-form .btn{        
+        font-size: 16px;
+        font-weight: bold;		
+		min-width: 140px;
+        outline: none !important;
+    }
+	.signup-form .row div:first-child{
+		padding-right: 10px;
+	}
+	.signup-form .row div:last-child{
+		padding-left: 10px;
+	}    	
+    .signup-form a{
+		color: #fff;
+		text-decoration: underline;
+	}
+    .signup-form a:hover{
+		text-decoration: none;
+	}
+	.signup-form form a{
+		color: #5cb85c;
+		text-decoration: none;
+	}	
+	.signup-form form a:hover{
+		text-decoration: underline;
+    }
+    .text-center{
+        color:yellow;
+    }  
+    
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<!--Custom styles-->
+
+
+<div class="signup-form">
+  <form action="{{ url_for('login') }} "method="post">
+    <h3>Sign In</h3>
+      <div class="form-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+      <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+    </div>        	
+     
+      
+  <div class="form-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fas fa-key"></i></span>
+    </div>
+          <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+      </div> 
+  <div class="form-group">
+          <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
+      </div>
+  </form>
+<div class="text-center">Dont Have an account? <a href="{{ url_for('register') }}">Register</a></div>
+</div>
+
+
+
+
+<!--
+<div class="container">
+<div class="d-flex justify-content-center h-100">
+  <div class="card">
+    <div class="card-header">
+      <h3>Sign In</h3>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="input-group form-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="username">
+          
+        </div>
+        <div class="input-group form-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-key"></i></span>
+          </div>
+          <input type="password" class="form-control" placeholder="password">
+        </div>
+        <div class="row align-items-center remember">
+          <input type="checkbox">Remember Me
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Login" class="btn float-right login_btn">
+        </div>
+      </form>
+    </div>
+    <div class="card-footer">
+      <div class="d-flex justify-content-center links">
+        Don't have an account?<a href="#">Sign Up</a>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="#">Forgot your password?</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>-->
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+
+{% endblock %}
+
+
+
+
+
+
+{% block body %}
+
+<h1>Hello There {{user}}</h1>
+
+<h3>Search books </h3>
+
+<h4>{{message}}</h4>
+
+
+    <form action="{{ url_for('bookresult') }} "method="post">
+    <div class="form-group">
+      
+    <input type="text" class="form-control" name="query" placeholder="Search By isbn,author name, or book title" required="required">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">search</button>
+  </form>
+
+  {% endblock %}

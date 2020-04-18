@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+
+{% endblock %}
+
+
+
+
+
+
+{% block body %}
+
+<h1>Hello There {{user}}</h1>
+
+<h3>Search books </h3>
+
+    <form action="{{ url_for('welcome') }}" method="POST">
+    <div class="form-group">
+      
+    <input type="text" class="form-control" name="query" placeholder="Search By isbn,author name, or book title" required="required">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">search</button>
+  </form>
+
+
+{% if found %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ISBN</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Year</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <th scope="row">{{book.isbn}}</th>
+           <!-- <td><a href="{{ url_for('welcome',book_isbn=book.isbn)}}">{{book.title}}</a></td>-->
+            <td><a href="/welcome/{{book.isbn}}">{{book.title}}</a></td>
+            <td>{{book.author}}</td>
+            <td>{{book.year}}</td>
+          </tr>
+        {% endfor %}
+          
+        </tbody>
+    </table>
+
+    {% endif %}
+
+  {% endblock %}
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Bookify</title>
+
+        <div class="style-head">
+            {% block style %}
+            {% endblock %}
+
+
+        </div>
+
+        </head>
+
+        <body>
+
+            <body class="text-center">
+                <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+              <header class="masthead mb-auto">
+                <div class="inner">
+                  <h3 class="masthead-brand">Bookify</h3>
+                  <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                    <a class="nav-link" href="{{ url_for('login')}}">Login</a>
+                    <a class="nav-link" href="{{ url_for('register')}}">Register</a>
+                  </nav>
+                </div>
+              </header>
+
+        {% block body %}
+        {% endblock %}
+
+
+
+        </body>
+    
+    </html>
