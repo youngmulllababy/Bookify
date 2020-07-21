@@ -12,6 +12,20 @@
 
 {% block body %}
 
+  <div class="row ">
+    <div class="col sm-6" >
+      <div class="d-flex justify-content-end">
+      <img src="http://covers.openlibrary.org/b/isbn/{{book.isbn}}.jpg" id="G_img">
+    </div>
+    </div>
+ <style>
+   #G_img{
+     margin:10px 50px ;
+     width:70%;
+     height:70%;
+   }
+ </style>
+ <div class="col md-6" >
 <ul class="list-group">
     <li class="list-group-item">Book Information</li>
   
@@ -21,6 +35,20 @@
     <li class="list-group-item list-group-item-success">Year : {{book.year}}</li>
     <li class="list-group-item list-group-item-warning">isbn : {{book.isbn}}</li>
   </ul>
+  <div class="card">
+    <img src="https://s.gr-assets.com/assets/press/thumbnail_logo-a0e66b2e27d2b52773b0ddab4e10ea4a.jpg" class="card-img-top" id="goodreadsLogo" >
+    <p class="card-text">Number Of reviews: {{review_count}}</p>
+    <p class="card-text">Average score: {{review_average}}</p>
+</div>
+</div>
+
+
+</div>
+<style>
+  #goodreadsLogo{
+    width:fit-content;
+  }
+</style>
 
 <h2>Liked the book ? Add in a review </h2>
 
@@ -33,14 +61,22 @@
     </div>
 
     <div class="form-group ">
-    <label for="rating">Rate this book!</label>
-        <select class="form-control" name="rating" id="rating">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option selected value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+    <label for="rating">Rate this book!</label><br>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value='1'> 1
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value='2'> 2
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value='3'>3
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value='4'>4
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value='5'>5
+    </label>
     </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -48,17 +84,6 @@
   </form>
 
 
-
-
-
-<h2>Good Reads Reviews : </h2>
-<div class="container">
-    <div class="card">
-        <h5 class="card-title">Information</h5>
-        <p class="card-text">Number Of reviews: {{review_count}}</p>
-        <p class="card-text">Average score: {{review_average}}</p>
-    </div>
-</div>
 
 
 {% if reviews %}
