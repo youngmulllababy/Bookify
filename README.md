@@ -36,3 +36,4 @@ $ flask run
 1. I learned this awesome mini framework called Flask !, in which i got acquainted with sessions ,routing , templating and more . 
 2. Got familiar with storing user data using Heroku-PostgreSql
 3. Using Jinja 2 for the writing more clean and efficient  HTML (templating)
+4. Working with diffrent API's such as Goodreads API to get user reviews , and OpenLibrary API to get the cover of the books . 
