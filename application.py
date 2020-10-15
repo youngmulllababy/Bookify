@@ -164,7 +164,8 @@ def book(book_isbn):
         return redirect(url_for('welcome'))
 
     #goodreads
-    res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": 'XjGtONzuvyrOT8jxVcu6LQ', "isbns": book_isbn})
+    key = os.getenv("GOODREADS_KEY")
+    res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": key, "isbns": book_isbn})
     res=res.json()
     review_count=res['books'][0]['work_ratings_count']   
     review_average=res['books'][0]['average_rating'] 
