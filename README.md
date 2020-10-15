@@ -6,6 +6,9 @@ With Bookify you can choose your next book using our review system
 
 * We have reviews from the users of Bookify aswell as from the users of GoodReads , using GoodReads API . 
 
+## Site Demo
+You can view the site and test for yourself here : https://thebookify.herokuapp.com/
+
 
 ## To use this app 
 
@@ -27,8 +30,9 @@ $ flask run
 ```
 
 ## Technologies used in this project 
-1. For the backend part i worked with Python-Flask , and to store user data i worked with Heroku (As of this moment i havent deployed yet )
-2. Frontend is mostly CSS and Bootstrap . 
+1. For the backend part i worked with Python-Flask , and to store user data i worked with Heroku and PostgreSQL
+2.Deployment is done through heroku
+3. Frontend is mostly CSS and Bootstrap . 
 
 
 ## What i learned from this project 
